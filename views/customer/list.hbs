@@ -1,0 +1,139 @@
+<h3><a href="/customer" class="btn btn-secondary"><i class="fa fa-plus"></i> Create new</a>Customer list</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        {{#if this.status}}
+        {{else}}
+        {{#if this.status1}}
+        {{else}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.amount}}</td>
+            <td>
+                {{!-- <a href="/customer/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/customer/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a> --}}
+                
+                <a href="/customer/{{this._id}}"><button type="button" class="btn btn-primary">Update</button></a>
+                <a href="/customer/delete/{{this._id}}" onclick="return confirm('Are you sure to cancel order?');"><button type="button" class="btn btn-danger">cancel order</button></a>
+
+                {{!-- <button type="button" class="btn btn-danger">cancel order</button> --}}
+                {{!-- <button type="button" class="btn btn-primary">Hold</button> --}}
+                {{!-- <button type="button" class="btn btn-success">Paid</button> --}}
+                {{!-- <button type="button" class="btn btn-warning">Hold</button> --}}
+                <a href="/customer/paid/{{this._id}}">
+                <button type="button" class="btn btn-success">Paid</button>
+                </a>
+
+
+                <a href="/customer/hold/{{this._id}}">
+                <button type="button" class="btn btn-warning">Hold</button>
+                </a>
+
+
+            </td>
+        </tr>
+        {{/if}}
+        {{/if}}
+        {{/each}}
+    </tbody>
+</table>
+
+<h1>Payed Customer</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        {{#if this.status}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.amount}}</td>
+            <td>
+                {{!-- <a href="/customer/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/customer/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a> --}}
+                
+                {{!-- <a href="/customer/{{this._id}}"><button type="button" class="btn btn-primary">Update</button></a> --}}
+                {{!-- <a href="/customer/delete/{{this._id}}" onclick="return confirm('Are you sure to cancel order?');"><button type="button" class="btn btn-danger">cancel order</button></a> --}}
+
+                {{!-- <button type="button" class="btn btn-danger">cancel order</button> --}}
+                {{!-- <button type="button" class="btn btn-primary">Hold</button> --}}
+                {{!-- <button type="button" class="btn btn-success">Paid</button> --}}
+                {{!-- <button type="button" class="btn btn-warning">Hold</button> --}}
+                {{!-- <a href="/customer/{{this._id}}"><button type="button" class="btn btn-success">Paid</button></a> --}}
+                {{!-- <a href="/customer/{{this._id}}"><button type="button" class="btn btn-warning">Hold</button></a> --}}
+
+
+            </td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </tbody>
+</table>
+
+
+
+<h1>Hold Customer</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        {{#if this.status1}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.amount}}</td>
+            <td>
+                {{!-- <a href="/customer/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/customer/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a> --}}
+                
+                <a href="/customer/{{this._id}}"><button type="button" class="btn btn-primary">Update</button></a>
+                <a href="/customer/delete/{{this._id}}" onclick="return confirm('Are you sure to cancel order?');"><button type="button" class="btn btn-danger">cancel order</button></a>
+
+                {{!-- <button type="button" class="btn btn-danger">cancel order</button> --}}
+                {{!-- <button type="button" class="btn btn-primary">Hold</button> --}}
+                {{!-- <button type="button" class="btn btn-success">Paid</button> --}}
+                {{!-- <button type="button" class="btn btn-warning">Hold</button> --}}
+                <a href="/customer/paid/{{this._id}}">
+                <button type="button" class="btn btn-success">Paid</button>
+                </a>
+                {{!-- <a href="/customer/{{this._id}}"><button type="button" class="btn btn-warning">Hold</button></a> --}}
+
+
+            </td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </tbody>
+</table>
